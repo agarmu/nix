@@ -8,7 +8,11 @@
   # paths it should manage.
   home.username = "mukul";
   home.homeDirectory = "/home/mukul";
-
+  programs.git = {
+  	enable = true;
+	userName = "Mukul Agarwal";
+	userEmail = "agarmukul23@gmail.com";
+  };
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
