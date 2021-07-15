@@ -1,126 +1,131 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
+let
+	unstable = import
+		(builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/nixos-unstable)
+		{ config = config.nixpkgs.config; };
+in
 {
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+	programs.home-manager.enable = true;
+	home.username = "mukul";
+	home.homeDirectory = "/home/mukul";
 
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
-  home.username = "mukul";
-  home.homeDirectory = "/home/mukul";
-  home.packages = [
-  	pkgs.rustup pkgs.acpi pkgs.neovide
-];
-  programs.git = {
-  	enable = true;
-	userName = "Mukul Agarwal";
-	userEmail = "agarmukul23@gmail.com";
-  };
+	nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+		"authy"
+		"discord"
+		"firefox-devedition-bin" "firefox-devedition-bin-unwrapped"
+		"google-chrome"
+		"idea-ultimate"
+		"ngrok"
+		"obsidian"
+		"slack"
+		"spotify" "spotify-unwrapped"
+		"teamviewer"
+		"vscode"
+		"zoom"
+	];
 
-  programs.alacritty = {
-  	enable = true;
-	settings = {
-	    env.TERM = "alacritty-direct";
-	    window = {
-	    	    decorations = "Full";
-		    padding = { x = 2; y = 15; };
-		    dynamic_padding = true;
-		    dynamic_title = true;
-		    startup_mode = "windowed";
-	    };
-	    tabspaces = 4;
-	    draw_bold_text_with_bright_colors = true;
-	    debug = {
-	    	persistent_logging = false;
-		log_level = "Warn";
-	    };
-	    key_bindings = [
-		{
-			key = "N";
-			mods = "Super";
-			action = "SpawnNewInstance";
-		}
-	    ];
-	};
-  };
-  programs.htop = {
-	enable = true;
-	settings = {
-		color_scheme = 6;
-		cpu_count_from_one = 0;
-		delay = 15;
-		fields = with config.lib.htop.fields; [
-			PID
-			USER
-			PRIORITY
-			NICE
-			M_SIZE
-			M_RESIDENT
-			M_SHARE
-			STATE
-			PERCENT_CPU
-			PERCENT_MEM
-			TIME
-			COMM
-		];
-		highlight_base_name = 1;
-		highlight_megabytes = 1;
-		highlight_threads = 1;
-	} 
-	// (with config.lib.htop; leftMeters [
-	  (bar "AllCPUs2")
-	  (bar "Memory")
-	  (bar "Swap")
-	  (text "Zram")
-	]) // (with config.lib.htop; rightMeters [
-	  (text "Tasks")
-	  (text "LoadAverage")
-	  (text "Uptime")
-	  (text "Systemd")
-	]);
 
-};
+	imports = [
+		##################
+		#    PROGRAMS    #
+		##################
+		./programs/alacritty.nix		# Terminal Emulator
+		./programs/aria2.nix			# Download/Torrent Utility
+		./programs/bat.nix				# File contents viewer
+		./programs/chromium.nix			# Web browser
+		./programs/exa.nix				# File lister
+		./programs/firefox.nix			# Web browser
+		./programs/fish.nix				# Shell
+		./programs/fzf.nix				# Fuzzy Finder
+		./programs/gh.nix				# Github CLI
+		./programs/git.nix				# Version 
+		./programs/go.nix				# Go Programming Language
+		./programs/htop.nix				# Colorized, nicer, top
+		./programs/i3status-rust.nix	# Statusbar information
+		./programs/kitty.nix			# Terminal emulator
+		./programs/obs-studio.nix		# Advanced screen recorder
+		./programs/rofi.nix				# Application launcher
+		./programs/ssh.nix				# SSH
+		./programs/starship.nix			# Shell prompt
+		./programs/texlive.nix			# LaTeX distribution
+		./programs/tmux.nix				# Terminal Multiplexer
+		./programs/vscode.nix			# Code editor
 
-programs.bat = {
-	enable = true;
-	config.theme = "Dracula";
-	themes = {
-		dracula = builtins.readFile( pkgs.fetchFromGitHub {
-			owner = "dracula";
-			repo = "sublime";
-			rev = "26c57ec282abcaa76e57e055f38432bd827ac34e";
-			sha256 = "019hfl4zbn4vm4154hh3bwk6hm7bdxbr1hdww83nabxwjn99ndhv";
-		} + "/Dracula.tmTheme");
-	};
-};
-programs.exa = {
-	enable = true;
-};
-programs.feh = {
-	enable = true;
-};
+		##################
+		#    SERVICES    #
+		##################
+		./services/dunst.nix			# Notifications daemon
+		./services/flameshot.nix		# Screenshot tool
+		./services/picom.nix			# Display compositor
+		./services/polkit.nix			# Policy kit graphical agent
 
-programs.fish = {
-	enable = true;
-	shellAliases = {
-		la = "exa -alh";
-		ll = "exa -lh";
-		tree = "exa --tree";
-		tral = "exa --tree -lah";
-	};
-};
-programs.fzf.enable = true;
-programs.gh.enable = true;
-programs.go.enable = true;
-programs.aria2.enable = true;
-programs.ssh = {
-	enable = true;
-	compression = true;
-};
-programs.starship.enable = true;
-programs.texlive.enable = true;
-programs.tmux.enable = true;
-programs.vscode.enable = true;
+		##################
+		#     OTHERS     #
+		##################
+		./other/cache.nix				# Declarative nix cache
+		./other/fonts.nix				# Fonts
+		./other/gtk.nix					# GTK Configuration
+		./other/x.nix					# Display protocol
+		./other/xdg.nix					# Cross-desktop group (freedesktop) - controls XDG config such as nautilus sidebar dirs
+	];
+	# TODO
+	# - Fix: chromium-widevine
+	# - Add: android-sdk-platform-tools, bootstrap-studio, docker,
+	#   docker-compose, howdy, prisma-studio, run-js, notion
+	# - Make: grub-silent, possibly with plymouth (?)
+	home.packages = with pkgs; [
+		# Two-factor authentication app
+		(authy.overrideAttrs (oa: { meta = oa.meta // { priority = 6; }; }))
+		acpi					# Battery Tool
+		b3sum                   # BLAKE3 hashing tool 
+		bitwarden               # Password manager
+		#bottom                 # Terminal-based task viewer
+		#calibre                # Ebook library
+		discord                 # Communications app
+		dmg2img                 # Disk image converter
+		du-dust                 # Terminal-based storage space viewer
+		efibootmgr              # EFI boot entry manager
+		element-desktop         # Matrix Chat Client
+		etcher                  # Disk image flasher
+		fd                      # File finder
+		fritzing                # Hardware design tool
+		gcc                     # Compiler
+		gimp                    # Image editor
+		gnome.gnome-font-viewer # Font viewer
+		gnome.nautilus          # File system explorer
+		gnome.seahorse          # Keychain viewer
+		google-chrome           # Browser
+		gparted                 # Partition manager
+		grex                    # Regex maker
+		handbrake               # Audio-video encoder
+		hsetroot                # Wallpaper setter
+		hyperfine               # Benchmarking tool
+		imagemagick             # Terminal-based photo modifier
+		insomnia                # REST client
+		lm_sensors              # Hardware sensors. Required for i3status-rust
+		neofetch                # Terminal-based system-info viewer
+		ngrok                   # Localhost proxy-tunnel
+		obsidian                # Document organiser
+		polkit_gnome            # Policy Kit Agent
+		procs                   # Terminal job viewer
+		ripgrep                 # File-content searcher
+		rustup                  # Rust toolchain manager
+		sd                      # stdin filterer
+		signal-desktop          # Communications app
+		slack                   # Communications app
+		speedtest-cli           # Network speed measurer
+		spotify                 # Music app
+		tealdeer                # Manual summarizer
+		teamviewer              # Remote desktop app
+		unzip                   # File unzipper
+		vim                     # Advanced text editor
+		vlc                     # Audio/video player
+		wget                    # File downloader
+		yaru-theme              # GTK Theme
+		youtube-dl              # Multimedia scraper
+		zoom-us                 # Video call app
+	];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
