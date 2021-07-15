@@ -1,0 +1,1 @@
+A modification of [Khushraj Rathod's NixOS configuration.](https://github.com/khrj/nixos-config)
