@@ -80,8 +80,8 @@ in
 		acpi					# Battery Tool
 		b3sum                   # BLAKE3 hashing tool 
 		bitwarden               # Password manager
-		#bottom                 # Terminal-based task viewer
-		#calibre                # Ebook library
+		bottom					# Terminal-based task viewer
+		calibre					# Ebook library
 		discord                 # Communications app
 		dmg2img                 # Disk image converter
 		du-dust                 # Terminal-based storage space viewer
@@ -89,6 +89,7 @@ in
 		element-desktop         # Matrix Chat Client
 		etcher                  # Disk image flasher
 		fd                      # File finder
+		file					# Determines type of file
 		fritzing                # Hardware design tool
 		gcc                     # Compiler
 		gimp                    # Image editor
@@ -105,6 +106,7 @@ in
 		insomnia                # REST client
 		lm_sensors              # Hardware sensors. Required for i3status-rust
 		neofetch                # Terminal-based system-info viewer
+		neovim					# Vim but better 
 		ngrok                   # Localhost proxy-tunnel
 		obsidian                # Document organiser
 		polkit_gnome            # Policy Kit Agent
