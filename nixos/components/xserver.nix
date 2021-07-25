@@ -18,7 +18,7 @@ in
 		};
 		displayManager.lightdm = {
 			enable = true;
-			background = background-image;
+			background = "${background-image}";
 			greeters.enso = {
 				enable = true;
 				blur = true;
