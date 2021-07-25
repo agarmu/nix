@@ -1,5 +1,10 @@
 { config, pkgs, lib, ... }:
-
+let
+	background-image = builtins.fetchurl {
+		url = "https://images.unsplash.com/photo-1519681393784-d120267933ba";
+		sha256 = "af05fea198b4e368470dbb697845e67b50632096026ab81a399b8f5025818daf";
+	};
+in
 {
 	xsession = {
 		enable = true;
@@ -15,7 +20,7 @@
 				gaps.inner = 15;
 				terminal = "kitty";
 				defaultWorkspace = "workspace number 1";
-				startup = [{ command = "hsetroot -cover ~/.background-image"; notification = false; }];
+				startup = [{ command = "hsetroot -cover ${background-image}"; notification = false; }];
 				bars = [
 					{
 						command = "i3bar --transparency";

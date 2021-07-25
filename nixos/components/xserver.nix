@@ -1,5 +1,10 @@
 { pkgs, ... }:
-
+let
+	background-image = builtins.fetchurl {
+		url = "https://images.unsplash.com/photo-1508739773434-c26b3d09e071";
+		sha256 = "aeadb55b8d9fbd1db27619caff8519e82c4e730f278270e04e4c69f476ea90d4";
+	};
+in
 {
 	hardware.opengl = {
 		enable = true;
@@ -13,7 +18,7 @@
 		};
 		displayManager.lightdm = {
 			enable = true;
-			background = builtins.path { name = "background-image"; path = /home/mukul/.background-image; };
+			background = background-image;
 			greeters.enso = {
 				enable = true;
 				blur = true;
