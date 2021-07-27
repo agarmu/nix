@@ -68,7 +68,7 @@ in
 		./other/fonts.nix					# Fonts
 		./other/gtk.nix						# GTK Configuration
 		./other/manual.nix					# Manual Pages
-		./other/news.nix
+		./other/news.nix					# Home-manager news
 		./other/x.nix						# Display protocol
 		./other/xdg.nix						# Cross-desktop group (freedesktop) - controls XDG config such as nautilus sidebar dirs
 	];
