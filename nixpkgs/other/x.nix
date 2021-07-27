@@ -20,30 +20,16 @@ in
 				gaps.inner = 10;
 				terminal = "kitty";
 				defaultWorkspace = "workspace number 1";
-				startup = [{ command = "hsetroot -cover ${background-image}"; notification = false; }];
-				bars = [
+				startup = [
 					{
-						command = "i3bar --transparency";
-						position = "top";
-						statusCommand = "i3status-rs ~/.config/i3status-rust/config-default.toml";
-						fonts = {
-							names = ["pango:DejaVu Sans" "FontAwesome"];
-							size = 10.0;
-						};
-						colors = {
-							background  = "#FFFFFF80";
-							statusline = "#000000FF";
-							inactiveWorkspace = {
-								background = "#FFFFFF80";
-								border = "#FFFFFF80";
-								text = "#000000FF";
-							};
-							focusedWorkspace = {
-								background = "#006EF5FF";
-								border = "#FFFFFF80";
-								text = "#FFFFFFFF";
-							};
-						};
+						command = "hsetroot -cover ${background-image}";
+						always = true;
+						notification = false;
+					}
+					{
+						command = "systemctl --user restart polybar.service";
+						always = true;
+						notification = false;
 					}
 				];
 				assigns = {
