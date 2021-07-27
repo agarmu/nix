@@ -1,0 +1,6 @@
+{ ... }:
+{
+    services.sxhkd = {
+        enable = true;
+    };
+}

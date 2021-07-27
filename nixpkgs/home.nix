@@ -33,6 +33,8 @@ in
 		./programs/aria2.nix				# Download/Torrent Utility
 		./programs/bat.nix					# File contents viewer
 		./programs/chromium.nix				# Web browser
+		./programs/command-not-found.nix	# Command Not Found hook for Nix
+		./programs/dircolors.nix			# Directory colors for ls, etc.
 		./programs/exa.nix					# File lister
 		./programs/feh.nix					# Image viewer
 		./programs/firefox.nix				# Web browser
@@ -41,6 +43,7 @@ in
 		./programs/gh.nix					# Github CLI
 		./programs/git.nix					# Version 
 		./programs/go.nix					# Go Programming Language
+		./programs/gpg.nix					# GNU Privacy Guard
 		./programs/htop.nix					# Colorized, nicer, top
 		./programs/kitty.nix				# Terminal emulator
 		./programs/neovim.nix				# Terminal text editor
@@ -57,9 +60,13 @@ in
 		##################
 		./services/dunst.nix				# Notifications daemon
 		./services/flameshot.nix			# Screenshot tool
+		./services/gpg-agent.nix			# Service for GNU Privacy Guard
 		./services/picom.nix				# Display compositor
 		./services/polkit.nix				# Policy kit graphical agent
 		./services/polybar.nix				# Desktop Bar
+		./services/poweralertd.nix			# Alerts for computer power levels
+		./services/sxhkd.nix				# Keyboard shortcut service
+		./services/unclutter.nix			# Hide mouse after inactivity
 
 		##################
 		#     OTHERS     #
