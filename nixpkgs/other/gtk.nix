@@ -1,12 +1,17 @@
-{ ... }: 
+{ pkgs,... }: 
 
 {
 	gtk = {
 		enable = true;
-		iconTheme.name = "Yaru";
-		theme.name = "Yaru";
+		iconTheme = {
+			name = "gruvbox-dark-icons";
+			package = pkgs.gruvbox-dark-icons-gtk;
+		};
+		theme = {
+			name = "gruvbox-dark";
+			package = pkgs.gruvbox-dark-gtk;
+		};
 		gtk3 = {
-			extraConfig.gtk-cursor-theme-name = "Yaru";
 			extraCss = ''
 				.background decoration {
 					padding: 0px;
