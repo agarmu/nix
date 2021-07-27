@@ -1,7 +1,7 @@
-{ ... }:
+{ config, ... }:
 
 let
-	disable = "/home/mukul"; # Setting directories to the home directory disables them
+	disable = "${config.home.homeDirectory}"; # Setting directories to the home directory disables them
 in
 {
 	xdg = {
@@ -10,7 +10,7 @@ in
 			createDirectories = true;
 			desktop     = disable;
 			documents   = disable;
-			download    = "/home/mukul/Downloads";
+			download    = "${config.home.homeDirectory}/Downloads";
 			music       = disable;
 			pictures    = disable;
 			publicShare = disable;
