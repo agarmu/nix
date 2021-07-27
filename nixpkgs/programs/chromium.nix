@@ -3,7 +3,6 @@
 {
 	programs.chromium = {
 		enable = true;
-		package = pkgs.ungoogled-chromium;
 		extensions = [
 			{ id = "nngceckbapebfimnlniiiahkandclblb"; } # Bitwarden
 			{ id = "lckanjgmijmafbedllaakclkaicjfmnk"; } # ClearURLs
