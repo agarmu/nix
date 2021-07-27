@@ -46,6 +46,10 @@ in
 						};
 					}
 				];
+				assigns = {
+
+				};
+				bars = [];
 				keybindings = 
 				  let
 					mod = config.xsession.windowManager.i3.config.modifier;
