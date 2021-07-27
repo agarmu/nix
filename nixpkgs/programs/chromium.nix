@@ -1,5 +1,4 @@
 { pkgs, ... }: 
-
 {
 	programs.chromium = {
 		enable = true;
@@ -12,6 +11,10 @@
 			{ id = "ajhmfdgkijocedmfjonnpjfojldioehi"; } # Privacy pass
 			{ id = "hipekcciheckooncpjeljhnekcoolahp"; } # Tabliss
 			{ id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # uBlock Origin
+			{
+				id = "dcpihecpambacapedldabdbpakmachpb";
+				updateUrl = "https://raw.githubusercontent.com/iamadamdev/bypass-paywalls-chrome/master/updates.xml";
+			} # Bypass Firewalls
 		];
 	};
 }
