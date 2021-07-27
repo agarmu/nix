@@ -1,15 +1,13 @@
 { ... }:
-
 {
 	programs.git = {
 		enable = true;
 		userEmail = "agarmukul23@gmail.com";
 		userName = "Mukul Agarwal";
-		# TODO: Add signing
-		#signing = {
-		#	signByDefault = true;
-		#	key = "";
-		#};
+		signing = {
+			signByDefault = true;
+			key = null;
+		};
 		extraConfig = {
 			core = {
 				editor = "code --wait --new-window";
