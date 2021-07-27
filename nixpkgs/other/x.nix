@@ -16,8 +16,8 @@ in
 				menu = "rofi -show drun";
 				modifier = "Mod4";
 				floating.modifier = "Mod4";
-				focus.followMouse = false;
-				gaps.inner = 15;
+				focus.followMouse = true;
+				gaps.inner = 10;
 				terminal = "kitty";
 				defaultWorkspace = "workspace number 1";
 				startup = [{ command = "hsetroot -cover ${background-image}"; notification = false; }];
@@ -54,7 +54,8 @@ in
 					"${mod}+space" = ''exec "${menu}"'';
 				  	"${mod}+shift+s" = "focus mode_toggle";
 					"${mod}+d" = "focus child";
-					"${mod}+shift+x" = ''exec "flameshot gui"'';  
+					"${mod}+shift+x" = ''exec "flameshot gui"'';
+					"${mod}+shift+enter" = ''exec "alacritty"'';
 				};
 			};
 		};
