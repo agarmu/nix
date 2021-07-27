@@ -30,45 +30,47 @@ in
 		##################
 		#    PROGRAMS    #
 		##################
-		./programs/aria2.nix			# Download/Torrent Utility
-		./programs/bat.nix				# File contents viewer
-		./programs/chromium.nix			# Web browser
-		./programs/exa.nix				# File lister
-		./programs/feh.nix				# Image viewer
-		./programs/firefox.nix			# Web browser
-		./programs/fish.nix				# Shell
-		./programs/fzf.nix				# Fuzzy Finder
-		./programs/gh.nix				# Github CLI
-		./programs/git.nix				# Version 
-		./programs/go.nix				# Go Programming Language
-		./programs/htop.nix				# Colorized, nicer, top
-		./programs/kitty.nix			# Terminal emulator
-		./programs/neovim.nix			# Terminal text editor
-		./programs/obs-studio.nix		# Advanced screen recorder
-		./programs/rofi.nix				# Application launcher
-		./programs/ssh.nix				# SSH
-		./programs/starship.nix			# Shell prompt
-		./programs/texlive.nix			# LaTeX distribution
-		./programs/tmux.nix				# Terminal Multiplexer
-		./programs/vscode.nix			# Code editor
+		./programs/aria2.nix				# Download/Torrent Utility
+		./programs/bat.nix					# File contents viewer
+		./programs/chromium.nix				# Web browser
+		./programs/exa.nix					# File lister
+		./programs/feh.nix					# Image viewer
+		./programs/firefox.nix				# Web browser
+		./programs/fish.nix					# Shell
+		./programs/fzf.nix					# Fuzzy Finder
+		./programs/gh.nix					# Github CLI
+		./programs/git.nix					# Version 
+		./programs/go.nix					# Go Programming Language
+		./programs/htop.nix					# Colorized, nicer, top
+		./programs/kitty.nix				# Terminal emulator
+		./programs/neovim.nix				# Terminal text editor
+		./programs/obs-studio.nix			# Advanced screen recorder
+		./programs/rofi.nix					# Application launcher
+		./programs/ssh.nix					# SSH
+		./programs/starship.nix				# Shell prompt
+		./programs/texlive.nix				# LaTeX distribution
+		./programs/tmux.nix					# Terminal Multiplexer
+		./programs/vscode.nix				# Code editor
 
 		##################
 		#    SERVICES    #
 		##################
-		./services/dunst.nix			# Notifications daemon
-		./services/flameshot.nix		# Screenshot tool
-		./services/picom.nix			# Display compositor
-		./services/polkit.nix			# Policy kit graphical agent
-		./services/polybar.nix			# Desktop Bar
+		./services/dunst.nix				# Notifications daemon
+		./services/flameshot.nix			# Screenshot tool
+		./services/picom.nix				# Display compositor
+		./services/polkit.nix				# Policy kit graphical agent
+		./services/polybar.nix				# Desktop Bar
 
 		##################
 		#     OTHERS     #
 		##################
-		./other/cachix.nix				# Declarative nix cache
-		./other/fonts.nix				# Fonts
-		./other/gtk.nix					# GTK Configuration
-		./other/x.nix					# Display protocol
-		./other/xdg.nix					# Cross-desktop group (freedesktop) - controls XDG config such as nautilus sidebar dirs
+		./other/cachix.nix					# Declarative nix cache
+		./other/fonts.nix					# Fonts
+		./other/gtk.nix						# GTK Configuration
+		./other/manual.nix					# Manual Pages
+		./other/news.nix
+		./other/x.nix						# Display protocol
+		./other/xdg.nix						# Cross-desktop group (freedesktop) - controls XDG config such as nautilus sidebar dirs
 	];
 	# TODO
 	# - Fix: chromium-widevine
