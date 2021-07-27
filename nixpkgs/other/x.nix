@@ -1,8 +1,8 @@
 { config, pkgs, lib, ... }:
 let
 	background-image = builtins.fetchurl {
-		url = "https://images.unsplash.com/photo-1519681393784-d120267933ba";
-		sha256 = "af05fea198b4e368470dbb697845e67b50632096026ab81a399b8f5025818daf";
+		url = "https://raw.githubusercontent.com/adi1090x/polybar-themes/master/wallpapers/bg_18.jpg";
+		sha256 = "039013e564892c8ff26e8a53531146d092c3e4d586e47ac861d25e305c4cb0b2";
 	};
 in
 {
