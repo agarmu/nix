@@ -3,6 +3,11 @@
 {
 	gtk = {
 		enable = true;
+		font = {
+			name = "DejaVu Sans";
+			package = pkgs.dejavu_fonts;
+			size = 11;
+		};
 		iconTheme = {
 			name = "gruvbox-dark-icons";
 			package = pkgs.gruvbox-dark-icons-gtk;
