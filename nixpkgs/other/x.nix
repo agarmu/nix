@@ -52,6 +52,7 @@ in
 					menu = config.xsession.windowManager.i3.config.menu;
 				  in lib.mkOptionDefault {
 					"${mod}+space" = ''exec "${menu}"'';
+					"${mod}+b" = ''exec "firefox-devedition"'';
 				  	"${mod}+shift+s" = "focus mode_toggle";
 					"${mod}+d" = "focus child";
 					"${mod}+shift+x" = ''exec "flameshot gui"'';
