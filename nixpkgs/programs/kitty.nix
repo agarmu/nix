@@ -31,27 +31,37 @@
 			tab_bar_style = "fade";
 
 			# Colors
-			background           = "#001e26";
-			foreground           = "#708183";
-			selection_background = "#002731";
-			selection_foreground = "#E0DBC9";
-			cursor               = "#708183";
-			color0               = "#002731";
-			color1               = "#d01b24";
-			color2               = "#728905";
-			color3               = "#a57705";
-			color4               = "#2075c7";
-			color5               = "#c61b6e";
-			color6               = "#259185";
-			color7               = "#e9e2cb";
-			color8               = "#001e26";
-			color9               = "#bd3612";
-			color10              = "#465a61";
-			color11              = "#52676f";
-			color12              = "#708183";
-			color13              = "#5856b9";
-			color14              = "#81908f";
-			color15              = "#fcf4dc";
+			# gruvbox-dark colorscheme for kitty
+			# https://gist.github.com/lunks/0d5731693084b2831c88ca23936d20e8
+			foreground				= "#ebdbb2";
+			background				= "#272727";
+			selection_foreground	= "#655b53";
+			selection_background	= "#ebdbb2";
+			url_color				= "#d65c0d";
+			# black
+			color0					= "#272727";
+			color8					= "#928373";
+			# red
+			color1 					= "#cc231c";
+			color9 					= "#fb4833";
+			# green
+			color2 					= "#989719";
+			color10					= "#b8ba25";
+			# yellow
+			color3 					= "#d79920";
+			color11					= "#fabc2e";
+			# blue
+			color4					= "#448488";
+			color12					= "#83a597";
+			# magenta
+			color5 					= "#b16185";
+			color13					= "#d3859a";
+			# cyan
+			color6 					= "#689d69";
+			color14					= "#8ec07b";
+			# white
+			color7 					= "#a89983";
+			color15					= "#ebdbb2";
 		};
 
 		keybindings = {
