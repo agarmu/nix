@@ -104,7 +104,7 @@ in
 		fd                      			# File finder
 		file								# Determines type of file
 		fritzing                			# Hardware design tool
-		gcc                     			# Compiler
+		gcc11                     			# Compiler
 		gimp                    			# Image editor
 		gnome.gnome-font-viewer 			# Font viewer
 		gnome.nautilus          			# File system explorer
