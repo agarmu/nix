@@ -8,19 +8,7 @@
 			allowedTCPPorts = [ 22 88 443 3000 8000 8080 ];
 			allowedUDPPorts = [ 5353 53791 ];
 		};
-		wireless = {
-			enable = true;
-			userControlled.enable = true;
-			interfaces = [ "wlp2s0" ];
-			networks = {
-				"MOTO1EA2" = {
-					priority = 2;
-				};
-				"MOTO1EA2-5G" = {
-					priority = 3;
-				};
-			};
-		};
+                networkmanager.enable = true;
 		useDHCP = false;
 		interfaces.enp1s0.useDHCP = true;
 		interfaces.wlp2s0.useDHCP = true;
