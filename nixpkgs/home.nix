@@ -125,7 +125,8 @@ in
 		obsidian                			# Document organiser
 		polkit_gnome            			# Policy Kit Agent
 		procs                   			# Terminal job viewer
-		ripgrep                 			# File-content searcher
+                ripgrep                 			# File-content searcher
+                rsync
 		rustup                  			# Rust toolchain manager
 		sd                      			# stdin filterer
 		signal-desktop          			# Communications app
