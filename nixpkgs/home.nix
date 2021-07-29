@@ -117,7 +117,8 @@ in
 		hyperfine               			# Benchmarking tool
 		imagemagick             			# Terminal-based photo modifier
 		insomnia                			# REST client
-		lm_sensors              			# Hardware sensors. Required for i3status-rust
+                lm_sensors              			# Hardware sensors. Required for i3status-rust
+                libreoffice
 		mailspring							# Email Client
 		neofetch                			# Terminal-based system-info viewer
 		ngrok                   			# Localhost proxy-tunnel
