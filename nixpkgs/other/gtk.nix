@@ -4,8 +4,7 @@
 	gtk = {
 		enable = true;
 		font = {
-			name = "DejaVu Sans";
-			package = pkgs.dejavu_fonts;
+			name = " FiraCode Nerd Font Mono";
 			size = 11;
 		};
 		iconTheme = {
