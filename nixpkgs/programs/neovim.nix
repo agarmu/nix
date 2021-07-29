@@ -18,7 +18,6 @@
 			coc-cmake
         	editorconfig-vim
         	gruvbox
-			neogit
 			ferret
     		vim-airline
     		vim-elixir
