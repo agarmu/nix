@@ -117,16 +117,16 @@ in
 		hyperfine               			# Benchmarking tool
 		imagemagick             			# Terminal-based photo modifier
 		insomnia                			# REST client
-                lm_sensors              			# Hardware sensors. Required for i3status-rust
-                libreoffice
+        lm_sensors              			# Hardware sensors. Required for i3status-rust
+        libreoffice							# Productivity Software Suite
 		mailspring							# Email Client
 		neofetch                			# Terminal-based system-info viewer
 		ngrok                   			# Localhost proxy-tunnel
 		obsidian                			# Document organiser
 		polkit_gnome            			# Policy Kit Agent
 		procs                   			# Terminal job viewer
-                ripgrep                 			# File-content searcher
-                rsync
+        ripgrep                 			# File-content searcher
+        rsync								# File synchronization/transfer over networks
 		rustup                  			# Rust toolchain manager
 		sd                      			# stdin filterer
 		signal-desktop          			# Communications app
