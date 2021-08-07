@@ -134,7 +134,6 @@ in
 		speedtest-cli           			# Network speed measurer
 		spotify                 			# Music app
 		tealdeer                			# Manual summarizer
-		unstable.tor-browser-bundle-bin		# Tor Browser
 		teamviewer              			# Remote desktop app
 		unzip                   			# File unzipper
 		vim                     			# Advanced text editor
