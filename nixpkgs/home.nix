@@ -1,12 +1,4 @@
 { config, lib, pkgs, ... }:
-
-let
-	unstable = import
-		(builtins.fetchTarball {
-			url = https://github.com/nixos/nixpkgs/tarball/nixos-unstable;
-		})
-		{ config = config.nixpkgs.config; };
-in
 {
 	programs.home-manager.enable = true;
 	home.username = "mukul";
